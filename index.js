@@ -4,7 +4,7 @@ var bodyparser = require('body-parser');
 var alert = require('alert');
 var mongoose = require('mongoose');
 var User = require('./model');
-var dbkey = require('./keys');
+//var dbkey = require('./keys');
 
 /* Init app */
 var app = express();
