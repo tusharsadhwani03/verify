@@ -123,8 +123,14 @@ h4{
 }
 .fs2{
     margin-bottom: 2vh;
-    display: none;
 }
 .display{
     display: none;
+}
+h3{
+    font-size: larger;
+    color: rgb(216, 38, 26);
+}
+.clr{
+    background : linear-gradient(lightgreen,darkgreen);
 }

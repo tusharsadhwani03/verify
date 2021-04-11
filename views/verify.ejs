@@ -27,29 +27,34 @@
     <div class="animate">
         <div class="obj"></div>
     </div>
-    <div class="verify display">
+    <div class="verify">
         <form method="POST" action="/vrfy" class="formm">
             <fieldset class="fs1">
                 <legend style="font-size: x-large;">Certified Credential Verification</legend>
                 <h4>Certificate Number</h4>
-                <input type="text" class="cred" placeholder="Enter Verification Number">
+                <input type="text" class="cred" name="token" placeholder="Enter Verification Number" required = "true" value="<%= err %>">
                 <input type="submit" class="submit" value="VERIFY">
                 <br/>
-                <fieldset class="fs2"  >
+                <fieldset class="fs2 display">
                     <legend style="font-size: x-large;">Verification Result from MongoDb Database</legend>
-                    <h3>Name : </h3>
-                    <h3>Certificate Number :</h3> 
-                    <h3>Certification :</h3>
-                    <h3>Issued on :</h3>
-                    <h3>Issued by :</h3>
+                    <% if(user)  { %>
+                        <h3><u style="color: rgba(0,0,0,0.8);">Name :</u> <%= user.Name %></h3>
+                        <h3><u style="color: rgba(0,0,0,0.8);">Certificate Number :</u> <%= user.CertificateNumber %></h3>
+                        <h3><u style="color: rgba(0,0,0,0.8);">Certification :</u> <%= user.Certification %></h3>
+                        <h3><u style="color: rgba(0,0,0,0.8);">Issue on : </u><%= user.Issueon %></h3>
+                        <h3><u style="color: rgba(0,0,0,0.8);">Issue by : </u><%= user.Issueby %></h3>
+                    <% } %>
                 </fieldset>
                 <div class="text">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere dolore, eligendi rerum eum adipisci aperiam aspernatur laborum fugiat tempore, corrupti, vel beatae harum voluptas excepturi eius eaque maxime? Dolores libero adipisci officiis repellendus eius commodi explicabo magnam, labore debitis aliquid expedita odio optio aperiam cum consectetur illum suscipit corporis? Ea rem veniam asperiores ad, soluta officiis voluptas, nulla voluptatem amet sed autem hic iusto laborum sapiente velit. Sed odio doloribus labore magni? Rerum omnis provident iste asperiores exercitationem quis rem perferendis distinctio, autem quia.
                 </div>
             </fieldset>
         </form>
-        
     </div>
+    <% if(user) { %>
+        <script src="/frontend js/verify2.js"></script>
+    <% } else { %>
     <script src="/frontend js/verify.js"></script>
+    <% } %>
 </body>
 </html>
