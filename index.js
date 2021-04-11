@@ -30,7 +30,7 @@ app.use(express.static('public'));
 app.set('view engine','ejs');
 
 /* Handling GET requests */
-app.get('/verify',(req,res)=>{
+app.get('/',(req,res)=>{
     res.render('verify',{user : "" , err : ""});
 });
 
