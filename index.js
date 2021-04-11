@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 /* Connect to database */
  try {
-    mongoose.connect(dbkey,{useNewUrlParser : true , useUnifiedTopology : true});
+    mongoose.connect(process.env.dbkey,{useNewUrlParser : true , useUnifiedTopology : true});
     console.log('okk db connected...');
  } catch (error) {
      console.log(error);
